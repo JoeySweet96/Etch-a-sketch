@@ -21,9 +21,15 @@ body {
     align-items: center;
 }
 
-.container {
+.board {
     display: grid;
     width: 500px;
     height: 500px;
     border: 1px solid black;
+}
+
+.board>div {
+    border: 1px solid gray;
+    background-color: lightblue;
+    /* Just for visibility */
 }
