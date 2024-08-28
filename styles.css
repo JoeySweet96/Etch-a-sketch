@@ -30,6 +30,6 @@ body {
 
 .board>div {
     border: 1px solid gray;
-    background-color: lightblue;
+    background-color: white;
     /* Just for visibility */
 }

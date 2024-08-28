@@ -1,3 +1,4 @@
+let color = 'black';
 
 let popButton = document.querySelector("#popup");
 popButton.addEventListener('click', function () {
@@ -18,9 +19,7 @@ function createBoard(size) {
 
     for (let i = 0; i < area; i++) {
         let div = document.createElement('div');
-        div.addEventListener('mouseover', function () {
-            this.style.backgroundColor = 'yellow';
-        });
+        div.addEventListener('mouseover', colorDiv)
         board.insertAdjacentElement("beforeend", div);
     }
 }
@@ -39,4 +38,22 @@ function getSize() {
         message.innerHTML = input;
         return input;
     }
+}
+
+function setColor(colorChoice) {
+    color = colorChoice;
+}
+
+function colorDiv() {
+    if (color == "random") {
+        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`
+    }
+    else {
+        this.style.backgroundColor = "black";
+    }
+}
+
+function resetBoard() {
+    let divs = document.querySelectorAll("div");
+    divs.forEach((div) => div.style.backgroundColor = "white");
 }
